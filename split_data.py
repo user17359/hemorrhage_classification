@@ -65,7 +65,7 @@ for sNo in tqdm(range(0+49, numSubj+49)):
             array_from_x = np.where(array_from_x > 128, 255, 0)
             # print(np.unique(array_from_x)) only 0 and 255 values - correct
             x = Image.fromarray(array_from_x)
-            print(x.getcolors())  # everything looks fine so idk what's wrong
+            # print(x.getcolors()) everything looks fine so idk what's wrong
             x.save(os.path.join(label_path, (str(counterI) + '.png')))
         else:
             x = np.zeros([new_size[0], new_size[1]], dtype=np.uint8)
