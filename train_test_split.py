@@ -47,7 +47,7 @@ for i in data['label']:
         hemo_count += 1
 print (hemo_count)"""
 
-# spliting data into training and test sets
+# splitting the data into training and test sets
 X = data['data']
 y = np.array(data['label'])
  
@@ -60,7 +60,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     stratify=y
 )
 
-# chceking if sets are equal in size
+# checking if sets are equal in size
 unique, train_counts = np.unique(y_train, return_counts=True)
 unique, test_counts = np.unique(y_train, return_counts=True)
 
