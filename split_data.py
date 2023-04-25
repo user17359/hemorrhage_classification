@@ -9,7 +9,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-import cv2
 from PIL import Image
 
 numSubj = 82
