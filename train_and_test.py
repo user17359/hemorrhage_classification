@@ -55,9 +55,11 @@ X_train_final = scale_images.fit_transform(X_train_hog)
 
 # print(X_train_final.shape)  # (2000, 60516)
 
-# Stochastic Gradient Descent Classifier
+# Stochastic Gradient Descent Classifier/Support Vector Machine Classifier
 # create the classifier instance and train it:
-svc = svm.SVC(kernel='linear')
+svc = svm.SVC(kernel='linear', class_weight='balanced')
+# class_weight = 'balanced' produced the same results as before (without using this parameter)
+
 svc.fit(X_train_final, y_train)
 y_train_pred = svc.predict(X_train_final)
 
