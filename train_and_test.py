@@ -58,7 +58,13 @@ X_train_final = scale_images.fit_transform(X_train_hog)
 # Stochastic Gradient Descent Classifier/Support Vector Machine Classifier
 # create the classifier instance and train it:
 svc = svm.SVC(kernel='linear', class_weight='balanced')
+
 # class_weight = 'balanced' produced the same results as before (without using this parameter)
+# changes appear only when the class weights are EXTREMELY imbalanced (I tried running the script with weights
+# {0: 0.00001, 1: 200} - there were mistakes in the confusion matrix for the training set, accuracy dropped and
+# the model was biased towards class 1 (more False Positives than before)
+# so yeah I think there's not much we can do about it just by modifying the class weights, we should try data
+# augmentation as our next step
 
 svc.fit(X_train_final, y_train)
 y_train_pred = svc.predict(X_train_final)
