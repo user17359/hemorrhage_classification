@@ -46,3 +46,4 @@ for sNo in tqdm(range(0+49, numSubj+49)):
         x = img.resize(new_size)
         AllCTscans[counterI] = x
         x.save(os.path.join(image_path, (str(counterI) + '.png')))
+        counterI+=1
