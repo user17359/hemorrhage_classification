@@ -86,3 +86,12 @@ plt.ylabel("Percentage of images")
 plt.title("Percentage of classes in each set")
 plt.legend()
 plt.show()
+
+train=(len(y_train)+len(X_train))/(len(y_train)+len(X_train)+len(y_test)+len(X_test))*100
+test=(len(y_test)+len(X_test))/(len(y_train)+len(X_train)+len(y_test)+len(X_test))*100
+X1 = {'Train Set':train,'Test Set': test}
+names=list(X1.keys())
+values=list(X1.values())
+plt.bar(names,values,0.4,color='blue')
+plt.ylabel("Percentage of images")
+plt.show()
