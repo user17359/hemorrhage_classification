@@ -17,7 +17,6 @@ pipeline = Pipeline([('hog_images', HogTransformer(pixels_per_cell=(12, 12),
 
 # optimisation, run at your own risk :)))
 # (takes a long time and requires plenty computing power)
-# the hog transformer's parameters can still be optimised I think
 
 params = [
     {
